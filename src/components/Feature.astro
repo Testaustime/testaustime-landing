@@ -1,0 +1,40 @@
+---
+export interface Props {
+    title: string
+    body: string
+}
+
+const { title, body } = Astro.props
+---
+
+<li class="link-card">
+    <h2>{title}</h2>
+    <p>{body}</p>
+</li>
+<style>
+    .link-card {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        padding: 0.25rem;
+        gap: 20px;
+        background-image: none;
+        background-size: 400%;
+        border-radius: 0.6rem;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 1.25rem;
+        font-weight: 600;
+        transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    p {
+        font-family: "Ubuntu", sans-serif;
+        margin-top: 0.6rem;
+        margin-bottom: 0;
+        font-size: 0.95rem;
+        line-height: 1.2rem;
+        color: hsl(0, 0%, 60%);
+    }
+</style>

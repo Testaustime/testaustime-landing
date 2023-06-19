@@ -1,0 +1,72 @@
+---
+const plugins = [
+    {
+        name: "VSCode",
+        img: "/assets/vscode.png",
+        href: "https://github.com/Testaustime/testaustime-vscode",
+    },
+    {
+        name: "Neovim",
+        img: "/assets/neovim.svg",
+        href: "https://github.com/Testaustime/testaustime.nvim",
+    },
+    {
+        name: "IntelliJ",
+        img: "/assets/intellij.png",
+        href: "https://github.com/Testaustime/testaustime-intellij",
+    },
+]
+---
+
+<h2>Featured clients</h2>
+<p>Join 368 proud coders that have coded with Testaustime in total for up to 480 days!</p>
+
+<div class="plugins">
+    {
+        plugins.map((plugin) => (
+            <a href={plugin.href} target="_blank" class="plugin">
+                <img class="client-icon" src={plugin.img} />
+                <p>Download for {plugin.name}</p>
+            </a>
+        ))
+    }
+</div>
+
+<style>
+    h2 {
+        margin-top: 70px;
+    }
+    p {
+        color: hsl(0, 0%, 60%);
+    }
+    .plugins {
+        margin-top: 50px;
+        margin-bottom: 90px;
+        display: flex;
+        gap: 10px;
+    }
+    .plugin {
+        font-family: "Ubuntu", sans-serif;
+        text-decoration: none;
+        width: 100%;
+        padding: 10px 20px;
+        display: flex;
+        gap: 20px;
+        background-color: rgb(35, 35, 35);
+        transition: 200ms ease;
+        border-radius: 10px;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    .plugin:hover {
+        background-color: rgb(45, 45, 45);
+    }
+    .plugin p {
+        color: rgb(207, 207, 207);
+    }
+    .client-icon {
+        width: 30px;
+    }
+</style>
