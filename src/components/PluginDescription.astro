@@ -1,0 +1,15 @@
+---
+const apiserver = "https://api.testaustime.fi"
+
+const req = await fetch(`${apiserver}/stats`)
+const bod = await req.json()
+
+const codingTime = bod.coding_time
+const userCount = bod.user_count
+---
+
+<p>
+    Join the {userCount || "unknown amount of"} proud users that have shared a total {
+        Math.round(codingTime / 60 / 60 / 24)
+    } days of their programming experience with Testaustime
+</p>
