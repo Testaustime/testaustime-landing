@@ -1,15 +1,26 @@
 ---
 const apiserver = "https://api.testaustime.fi"
 
-const req = await fetch(`${apiserver}/stats`)
-const bod = await req.json()
+let bod = {
+    coding_time: 0,
+    user_count: "[fetching]",
+}
+try {
+    const req = await fetch(`${apiserver}/stats`)
+    bod = await req.json()
+} catch (e) {
+    bod = {
+        coding_time: 0,
+        user_count: "[request failed]",
+    }
+}
 
 const codingTime = bod.coding_time
 const userCount = bod.user_count
 ---
 
 <p>
-    Join the {userCount || "unknown amount of"} proud users that have shared a total {
-        Math.round(codingTime / 60 / 60 / 24)
+    Join the {userCount} proud users that have shared a total {
+        codingTime ? Math.round(codingTime / 60 / 60 / 24) : "[request failed]"
     } days of their programming experience with Testaustime
 </p>
