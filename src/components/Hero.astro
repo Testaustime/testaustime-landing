@@ -3,8 +3,8 @@
 
 <div class="hero">
     <div class="selling-clause">
-        <h1>The ultimate tool for tracking your <span class="text-gradient">coding time</span></h1>
-        <p><a href="https://app.testaustime.fi">Get started now</a>, it's free forever!</p>
+        <h1>The ultimate tool for tracking your <span class="text-gradient">programming time</span></h1>
+        <a href="https://app.testaustime.fi">Go to application</a>
     </div>
     <img src="/assets/preview.png" />
 </div>
@@ -13,7 +13,7 @@
     .hero img {
         max-width: 100%;
         border-radius: 10px;
-        margin-top: 80px;
+        margin-top: 120px;
     }
     .hero {
         position: relative;
@@ -21,9 +21,23 @@
     }
     .selling-clause h1 {
         font-size: 1.8rem;
+        max-width: 90%;
+        margin-bottom: 30px;
     }
-    .selling-clause p a {
-        color: rgb(203, 128, 198);
+    .selling-clause a {
+        padding: 10px 20px;
+        color: black;
+        font-weight: 200;
+        font-size: 0.9rem;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: 150ms ease;
+        background: rgb(255, 255, 255);
+        box-shadow: 0px 0px 50px 5px rgb(68, 68, 68);
+    }
+    .selling-clause a:hover {
+        background: rgb(197, 197, 197);
+        box-shadow: 0px 0px 50px 5px rgb(29, 29, 29);
     }
 
     .preview-image {
